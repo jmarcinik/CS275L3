@@ -24,16 +24,11 @@ public class EditLotActivity extends Activity
 	
 		try
 		{
-			GetLotsListTask task = new GetLotsListTask();
-			task.execute();
-			String[] lots = task.get();
-			
-			ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, lots);
-			adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		
 			Spinner spin = (Spinner) this.findViewById(R.id.spinner1);
 			
-			spin.setAdapter(adapter);
+			GetLotsListTask task = new GetLotsListTask();
+			task.execute(spin);			
+			
 		}
 		catch(Exception ex)
 		{
@@ -42,16 +37,15 @@ public class EditLotActivity extends Activity
 		
 		loaded = true;
 		
-		Button updateButton = (Button)this.findViewById(R.id.button3);
+		Button updateButton = (Button)this.findViewById(R.id.button1);
 		updateButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) 
 			{
-				Spinner spin = (Spinner) arg0.findViewById(R.id.spinner1);
+				Spinner spin = (Spinner) ((Activity) arg0.getContext()).findViewById(R.id.spinner1);
 				
-				//EditText et1 = (EditText) arg0.findViewById(R.id.editText1);
-				EditText et2 = (EditText) arg0.findViewById(R.id.editText2);
-				EditText et3 = (EditText) arg0.findViewById(R.id.editText3);
+				EditText et2 = (EditText) ((Activity) arg0.getContext()).findViewById(R.id.editText2);
+				EditText et3 = (EditText) ((Activity) arg0.getContext()).findViewById(R.id.editText3);
 				
 				String name = spin.getSelectedItem().toString(); //et1.getText().toString();
 				String price = et2.getText().toString();

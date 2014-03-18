@@ -60,14 +60,14 @@ public class SaveLotDataTask extends AsyncTask<LotInfo, Void, Void>
 				
 				req.disconnect();
 				
-				object = "\"" + info.getName() + "\": {\"LotName\": \"" + info.getName() + "\", \"openHours\": \"" + info.getHours() +
+				object = "{\"" + info.getName() + "\" : {\"LotName\": \"" + info.getName() + "\", \"openHours\": \"" + info.getHours() +
 		  		         "\", \"pricePerHour\": \"" + info.getPrice() + "\"";
 				
 				if(!info.isUpdate())
 					object += ", \"location\": {\"__type__\": \"geopoint\", \"longitude\": " + lon +
-				              ", \"latitude\": " + lat + " 	}}";
+				              ", \"latitude\": " + lat + " 	}}}";
 				else
-					object += "}";
+					object += "}}";
 			}
 			catch(Exception ex)
 			{

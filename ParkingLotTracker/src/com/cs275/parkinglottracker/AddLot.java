@@ -26,9 +26,9 @@ public class AddLot extends Activity {
 			@Override
 			public void onClick(View arg0)
 			{				
-				EditText et1 = (EditText) arg0.findViewById(R.id.editText1);
-				EditText et2 = (EditText) arg0.findViewById(R.id.editText2);
-				EditText et3 = (EditText) arg0.findViewById(R.id.editText3);
+				EditText et1 = (EditText) ((Activity) arg0.getContext()).findViewById(R.id.editText1);
+				EditText et2 = (EditText) ((Activity) arg0.getContext()).findViewById(R.id.editText2);
+				EditText et3 = (EditText) ((Activity) arg0.getContext()).findViewById(R.id.editText3);
 				
 				String name = et1.getText().toString();
 				String price = et2.getText().toString();

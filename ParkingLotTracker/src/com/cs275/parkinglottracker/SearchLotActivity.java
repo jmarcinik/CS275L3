@@ -15,15 +15,10 @@ public class SearchLotActivity extends Activity {
 		
 		try
 		{
-			SearchLotsTask task = new SearchLotsTask();
-			task.execute();
-			
-			String[] results = task.get();
-			
-			ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, results);
-			
 			ListView lv = (ListView)this.findViewById(R.id.listView1);
-			lv.setAdapter(adapter);
+			
+			SearchLotsTask task = new SearchLotsTask();
+			task.execute(lv);
 		}
 		catch(Exception ex)
 		{
