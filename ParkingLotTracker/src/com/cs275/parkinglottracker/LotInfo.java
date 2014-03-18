@@ -3,8 +3,9 @@ package com.cs275.parkinglottracker;
 public class LotInfo 
 {
 	private String name, hours, price, location;
+	boolean update;
 	
-	public LotInfo(String name, String hours, String price, String location)
+	public LotInfo(String name, String hours, String price, String location, boolean update)
 	{
 		this.name = name;
 		this.hours = hours;
@@ -12,7 +13,7 @@ public class LotInfo
 		this.location = location;
 	}
 	
-	public LotInfo(String name, String hours, String price)
+	public LotInfo(String name, String hours, String price, boolean update)
 	{
 		this.name = name;
 		this.hours = hours;
@@ -37,5 +38,10 @@ public class LotInfo
 	public String getLocation()
 	{
 		return "";
+	}
+	
+	public boolean isUpdate()
+	{
+		return update;
 	}
 }

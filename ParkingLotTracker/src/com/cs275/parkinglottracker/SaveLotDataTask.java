@@ -30,7 +30,7 @@ public class SaveLotDataTask extends AsyncTask<LotInfo, Void, Void>
 		{
 			LotInfo info = arg0[0];
 			
-			String lat = "0", lon = "0";
+			String lat = "", lon = "";
 			
 			String object = "";
 			
@@ -61,9 +61,13 @@ public class SaveLotDataTask extends AsyncTask<LotInfo, Void, Void>
 				req.disconnect();
 				
 				object = "\"" + info.getName() + "\": {\"LotName\": \"" + info.getName() + "\", \"openHours\": \"" + info.getHours() +
-		  		         "\", \"pricePerHour\": \"" + info.getPrice() + "\"," + 
-				         " \"location\": {\"__type__\": \"geopoint\", \"longitude\": " + lon +
-				         ", \"latitude\": " + lat + " 	}}";
+		  		         "\", \"pricePerHour\": \"" + info.getPrice() + "\"";
+				
+				if(!info.isUpdate())
+					object += ", \"location\": {\"__type__\": \"geopoint\", \"longitude\": " + lon +
+				              ", \"latitude\": " + lat + " 	}}";
+				else
+					object += "}";
 			}
 			catch(Exception ex)
 			{

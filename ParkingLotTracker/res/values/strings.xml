@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_add_lot">Add Lot</string>
+    <string name="title_activity_edit_lot">Edit Lot Info</string>
+    <string name="title_activity_search_lot">Search Lots</string>
 
 </resources>

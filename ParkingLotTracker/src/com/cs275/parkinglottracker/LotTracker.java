@@ -28,6 +28,23 @@ public class LotTracker extends Activity
 			}			
 		});
 		
+		Button editLotButton = (Button)this.findViewById(R.id.button2);
+		editLotButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v)
+			{
+				Intent showEditLot = new Intent(v.getContext(), EditLotActivity.class);
+				startActivity(showEditLot);
+			}			
+		});
+		
+		Button searchLotButton = (Button)this.findViewById(R.id.button3);
+		searchLotButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v)
+			{
+				Intent showSearchLot = new Intent(v.getContext(), SearchLotActivity.class);
+				startActivity(showSearchLot);
+			}			
+		});
 		
 	}
 

@@ -30,6 +30,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cs275.parkinglottracker.LotTracker" />
         </activity>
+        <activity
+            android:name="com.cs275.parkinglottracker.EditLotActivity"
+            android:label="@string/title_activity_edit_lot" >
+        </activity>
+        <activity
+            android:name="com.cs275.parkinglottracker.SearchLotActivity"
+            android:label="@string/title_activity_search_lot" >
+        </activity>
     </application>
 
 </manifest>
