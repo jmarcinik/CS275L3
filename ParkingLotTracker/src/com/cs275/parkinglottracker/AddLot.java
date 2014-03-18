@@ -1,8 +1,9 @@
 package com.cs275.parkinglottracker;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +12,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.support.v4.app.NavUtils;
 
 public class AddLot extends Activity {
 
@@ -20,6 +20,7 @@ public class AddLot extends Activity {
 	EditText editTextHour;
 	EditText editTextLocation;
 	Button buttonSave;
+	Button buttonCancel;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +33,19 @@ public class AddLot extends Activity {
 		editTextPrice = (EditText) findViewById(R.id.editText2);
 		editTextHour = (EditText) findViewById(R.id.editText3);
 		editTextLocation = (EditText) findViewById(R.id.editText4);
-		addListenerOnButtonSave();
+		addListeners();
 	}
 
-	private void addListenerOnButtonSave() {
+	// Click Listener for "Save" button
+	private void addListeners() {
 		// TODO Auto-generated method stub
 
 		// "Save" button
-		buttonSave = (Button) findViewById(R.id.button1);
-
+		buttonSave = (Button) findViewById(R.id.buttonSave);
 		buttonSave.setOnClickListener(new OnClickListener() { 
 			@Override
 			public void onClick(View arg0) {
 				Log.i("TEST", "Save button clicked.");
-
 				LotInfo lotInfo = null;
 
 				if(editTextLocation.getText().toString().trim().length() > 0)
@@ -63,10 +63,24 @@ public class AddLot extends Activity {
 				try
 				{
 					asyncTask.get();
+					Toast.makeText(getBaseContext(), "Saving...", Toast.LENGTH_LONG).show();
 				}
 				catch(Exception e){
 					Log.e("asyncTask.get()", e.toString());
 				}
+
+				finish();
+			}
+		});
+		
+		// "Cancel" button
+		buttonCancel = (Button) findViewById(R.id.buttonCancel);
+		buttonCancel.setOnClickListener(new OnClickListener() { 
+			@Override
+			public void onClick(View arg0) {
+				Log.i("TEST", "Cancel button clicked.");
+				Toast.makeText(getBaseContext(), "Canceled", Toast.LENGTH_LONG).show();
+				finish();
 			}
 		});
 	}

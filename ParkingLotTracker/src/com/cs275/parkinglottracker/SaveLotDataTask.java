@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.os.AsyncTask;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -12,8 +14,6 @@ import com.temboo.Library.CloudMine.ObjectStorage.ObjectSet;
 import com.temboo.Library.CloudMine.ObjectStorage.ObjectSet.ObjectSetInputSet;
 import com.temboo.core.TembooException;
 import com.temboo.core.TembooSession;
-
-import android.os.AsyncTask;
 
 public class SaveLotDataTask extends AsyncTask<LotInfo, Void, Void>
 {
@@ -60,10 +60,11 @@ public class SaveLotDataTask extends AsyncTask<LotInfo, Void, Void>
 				
 				req.disconnect();
 				
-				object = "\"" + info.getName() + "\": {\"LotName\": \"" + info.getName() + "\", \"openHours\": \"" + info.getHours() +
+				object = "{\"" + info.getName() + "\": {\"LotName\": \"" + info.getName() + "\", \"openHours\": \"" + info.getHours() +
 		  		         "\", \"pricePerHour\": \"" + info.getPrice() + "\"," + 
 				         " \"location\": {\"__type__\": \"geopoint\", \"longitude\": " + lon +
-				         ", \"latitude\": " + lat + " 	}}";
+				         ", \"latitude\": " + lat + " 	}}}";
+				android.util.Log.d("TEST", object);
 			}
 			catch(Exception ex)
 			{

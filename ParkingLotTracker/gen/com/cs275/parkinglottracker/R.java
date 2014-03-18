@@ -24,15 +24,19 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080013;
-        public static final int button1=0x7f08000f;
-        public static final int button2=0x7f080011;
-        public static final int button3=0x7f080012;
+        public static final int action_settings=0x7f080017;
+        public static final int buttonAddLot=0x7f080014;
+        public static final int buttonCancel=0x7f080010;
+        public static final int buttonClose=0x7f080012;
+        public static final int buttonEditLotInfo=0x7f080015;
+        public static final int buttonFindLot=0x7f080016;
+        public static final int buttonSave=0x7f08000f;
         public static final int editText1=0x7f080004;
         public static final int editText2=0x7f080007;
         public static final int editText3=0x7f08000a;
         public static final int editText4=0x7f08000d;
-        public static final int linearLayout1=0x7f080010;
+        public static final int linearLayout1=0x7f080013;
+        public static final int listView1=0x7f080011;
         public static final int tableRow1=0x7f080000;
         public static final int tableRow2=0x7f080002;
         public static final int tableRow3=0x7f080005;
@@ -47,11 +51,13 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_add_lot=0x7f030000;
-        public static final int activity_lot_tracker=0x7f030001;
+        public static final int activity_edit_lot_info=0x7f030001;
+        public static final int activity_lot_tracker=0x7f030002;
     }
     public static final class menu {
         public static final int add_lot=0x7f070000;
-        public static final int lot_tracker=0x7f070001;
+        public static final int edit_lot_info=0x7f070001;
+        public static final int lot_tracker=0x7f070002;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;

@@ -139,11 +139,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/button1"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Save" />
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/buttonSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.36"
+                    android:text="Save" />
+
+                <Button
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel" />
+
+            </LinearLayout>
 
         </TableRow>
 
